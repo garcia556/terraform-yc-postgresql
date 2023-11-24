@@ -1,7 +1,7 @@
 resource "random_password" "password" {
   for_each         = { for v in concat(var.owners, var.users) : v.name => v if v.password == null }
-  length           = 16
-  special          = true
+  length           = 32
+  special          = false
   min_lower        = 1
   min_numeric      = 1
   min_special      = 1
